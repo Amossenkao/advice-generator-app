@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+	opacity: 0;
+}
+
+.root {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: hsl(218, 23%, 16%);
+}
+
+.advice-container {
+	max-width: 50vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	padding: 2rem;
+	position: relative;
+	background-color: hsl(217, 19%, 24%);
+	border-radius: 10px;
+}
+
+.advice-number {
+	color: hsl(150, 100%, 66%);
+	text-transform: uppercase;
+}
+
+.advice-number span {
+	display: inline-block;
+	width: 4ch;
+}
+
+.divider,
+.divider img {
+	max-width: 100%;
+}
+
+.button-container {
+	position: absolute;
+	bottom: -25px;
+	transition: 0.5s;
+	border-radius: 50%;
+}
+
+button {
+	border: none;
+	outline: none;
+	padding: 10px;
+	width: 50px;
+	height: 50px;
+	background-color: hsl(150, 100%, 66%);
+	cursor: pointer;
+	border-radius: 50%;
+	position: relative;
+}
+
+button img {
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+.advice {
+	width: 80%;
+	height: 150px;
+	position: relative;
+}
+
+.advice p {
+	position: absolute;
+	text-align: center;
+	color: hsl(193, 38%, 86%);
+	font-family: 'Manrope', sans-serif;
+	font-weight: 800;
+	text-align: center;
+	font-size: 24px;
+	display: inline;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+.advice p span {
+	position: relative;
+}
+.advice p span::before {
+	content: '\201C';
+	position: absolute;
+	top: -6px;
+	left: -15px;
+	font-size: 30px;
+}
+
+.advice p span::after {
+	content: '\201D';
+	position: absolute;
+	bottom: -8px;
+	right: -15px;
+	font-size: 30px;
+}
+
+.spinner {
+	width: 80px;
+	height: 80px;
+	border: 3px solid;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	border-color: hsl(150, 100%, 66%) transparent;
+	border-radius: 50%;
+	animation: spin 0.75s ease infinite;
+}
+
+.inner-spinner {
+	width: 50px;
+	height: 50px;
+	border: 3px solid;
+	border-color: transparent #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	border-radius: 50%;
+	animation: spin2 0.25s ease-in-out infinite;
+}
+
+.button-container:hover {
+	animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+	from {
+		box-shadow: 0 0 10px hsl(150, 100%, 66%);
+	}
+
+	to {
+		box-shadow: 0 0 20px hsl(150, 100%, 66%);
+	}
+}
+
+@keyframes spin {
+	to {
+		rotate: 360deg;
+	}
+}
+
+@keyframes spin2 {
+	to {
+		rotate: -360deg;
+	}
+}
